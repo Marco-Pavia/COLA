@@ -1,3 +1,6 @@
+// Marco Antonio Pavi Flores
+// MainColaEsta.java
+
 public class MainColaEsta {
     public static void main(String[] args) {
         // Creamos una cola con espacio para 3 personas/elementos[cite: 6]

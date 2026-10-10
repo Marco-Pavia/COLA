@@ -1,3 +1,5 @@
+// Marco Antonio Pavia Flores
+// ColaEstaticaCircular.java
 
 public class ColaEstaticaCircular {
     private int[] arreglo;

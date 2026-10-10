@@ -1,3 +1,5 @@
+// Marco Antonio Pavia Flores
+// ColaEstatica.java
 
 public class ColaEstatica {
     private int[] arreglo;
