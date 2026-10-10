@@ -15,33 +15,37 @@ public class ColaEstatica {
         this.fin = -1; // inicializamos fin, numero fantasma[cite: 3]
     }
 
-    public void enqueue(int valor) { // agregar un elemento al final de la cola[cite: 2]
-        if (fin == capacidad - 1) { // cuando la fila esta llena[cite: 2]
-            System.out.println("Error: La cola está llena.");
-        } else {
-            fin++; // actualizamos la fila[cite: 2]
-            arreglo[fin] = valor; // agregamos al arreglo[cite: 2]
-            System.out.println("Entró a la fila: " + valor); // imprimimos[cite: 2]
+
+    //public void enqueue(int valor) { // agregar un elemento al final de la cola[cite: 2]
+    //    if (fin == capacidad - 1) { // cuando la fila esta llena[cite: 2]
+    //        System.out.println("Error: La cola está llena.");
+    //    } else {
+    //        fin++; // actualizamos la fila
+    //        arreglo[fin] = valor; // agregamos al arreglo
+    //        System.out.println("Entró a la fila: " + valor); // imprimimos
+    //    }
+    //}
+
+    public int dequeue() {
+        if (tamano == 0){
+            System.out.println("La cola está vacía ");
+            return -1;
         }
     }
 
-    public void dequeue() { // saca al primero de la fila[cite: 4]
-        if (frente > fin) { // si frente llega a ser mayor que fin la fila se vacia.[cite: 4]
-            System.out.println("Error: La cola está vacía.");
-        } else {
-            System.out.println("Atendido y fuera: " + arreglo[frente]); // atiende e imprime[cite: 4]
-            frente++; // actualiza frente cuando se atiende un elemento de la fila.[cite: 4]
-        }
-    }
+    int atendido = arreglo[frente];
+    frente = (frente + 1) % capacidad;
+
+    tamano  --;
 
     public void mostrar() {
         if (frente > fin) {
             System.out.println("La cola está vacía.");
-            return; // ya no hace nada de lo de abajo[cite: 1]
+            return; // ya no hace nada de lo de abajo
         }
         System.out.print("Fila actual: ");
-        for (int i = frente; i <= fin; i++) { // DESDE EL INICIO DE LA FILA HASTA EL FINAL[cite: 1]
-            System.out.print(arreglo[i] + " "); // IMPRIMIMOS EL ARREGLO[cite: 1]
+        for (int i = frente; i <= fin; i++) { // DESDE EL INICIO DE LA FILA HASTA EL FINAL
+            System.out.print(arreglo[i] + " "); // IMPRIMIMOS EL ARREGLO
         }
         System.out.println();
     }
